@@ -7,11 +7,13 @@ import (
 	"todo-app/internal/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"github.com/joho/godotenv"
 )
 
 var DB *gorm.DB
 
 func InitDatabase() {
+	godotenv.Load()
     dsn := fmt.Sprintf(
         "host=%s user=%s password=%s dbname=%s port=%s sslmode=disable",
         os.Getenv("DB_HOST"),
