@@ -38,14 +38,7 @@ func GetTodoByID(c *gin.Context) {
 
 func CreateTodo(c *gin.Context) {
     var todo models.Todo
-    // Extract JSON fields manually (since ShouldBindJSON doesn't work with multipart)
-    idStr := c.PostForm("id")
-    id, err := strconv.ParseUint(idStr, 10, 32) // Parsing the string into a uint
-    if err != nil {
-        c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid ID format"})
-        return
-    }
-    todo.ID = uint(id)
+    // Extract form data (excluding ID as it's auto-incremented)
     todo.Title = c.PostForm("title")
     todo.Description = c.PostForm("description")
 
@@ -77,14 +70,16 @@ func CreateTodo(c *gin.Context) {
         todo.Attachment = strings.Join(attachmentURLs, ",") // Save all URLs as comma-separated string
     }
 
-    // Save the todo item in the database
+    // Save the todo item in the database (ID will auto-increment)
     if err := database.DB.Create(&todo).Error; err != nil {
         c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create todo"})
         return
     }
+
     // Respond with the created todo
     c.JSON(http.StatusCreated, todo)
 }
+
 
 
 func UpdateTodo(c *gin.Context) {
