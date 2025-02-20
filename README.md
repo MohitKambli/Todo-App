@@ -16,7 +16,7 @@ Prerequisites
 
 ### A) On Local Machine
 
-#### 1. Clone the Repository
+#### 1. Fork and Clone the Repository
 
 First, clone this repository to your local machine:
 
@@ -87,7 +87,15 @@ psql -h localhost -U yourusername -d todoapp -p 5432
 
 ### B) On Docker
 
-#### 1. Docker Image
+#### 1. Fork and Clone the Repository
+
+First, clone this repository to your local machine:
+
+```
+git clone https://github.com/yourusername/todoapp.git
+```
+
+#### 2. Docker Image
 
 You can pull the Docker image from Docker Hub.
 
