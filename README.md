@@ -30,11 +30,11 @@ cd todo-app
 Create a .env file in the root of your project and configure the environment variables for your database connection & AWS S3 to store attachments. You can create the file manually or use an example file like so:
 
 ```
-DB_HOST='localhost'
-DB_USER='postgres'
-DB_PASSWORD='postgres'
-DB_NAME='postgres'
-DB_PORT='5432'
+DB_HOST=localhost
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=postgres
+DB_PORT=5432
 AWS_S3_BUCKET_NAME=
 AWS_REGION=
 AWS_ACCESS_KEY_ID=
@@ -106,11 +106,11 @@ docker build -t todoapp .
 Create a .env file in the root of your project and configure the environment variables for your database connection & AWS S3 to store attachments. You can create the file manually or use an example file like so:
 
 ```
-DB_HOST='localhost'
-DB_USER='postgres'
-DB_PASSWORD='postgres'
-DB_NAME='postgres'
-DB_PORT='5432'
+DB_HOST=localhost
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=postgres
+DB_PORT=5432
 AWS_S3_BUCKET_NAME=
 AWS_REGION=
 AWS_ACCESS_KEY_ID=
