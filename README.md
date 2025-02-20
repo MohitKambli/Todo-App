@@ -186,7 +186,20 @@ docker rmi yourusername/todo-app:latest
 ```
 
 
-Troubleshooting
+### Testing
+
+Execute the following commands from root directory to test the APIs:
+
+```
+  go test -v .\internal\handlers\get_todos_test.go -run TestGetTodos
+  go test -v .\internal\handlers\get_todo_by_id_test.go -run TestGetTodoByID
+  go test -v .\internal\handlers\create_todo_test.go -run TestCreateTodo
+  go test -v .\internal\handlers\update_todo_test.go -run TestUpdateTodo
+  go test -v .\internal\handlers\delete_todo_test.go -run TestDeleteTodo
+```
+
+
+### Troubleshooting
 
 - If you face any issues with the database connection, double-check the values in your .env file, especially the host, user, password, and database name.
 - Ensure Docker is running properly and check the logs for any error messages.
