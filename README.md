@@ -188,7 +188,7 @@ docker rmi yourusername/todo-app:latest
 
 ### Testing
 
-Execute the following commands from root directory to test the APIs:
+Execute the following commands from root directory to test the APIs (Make sure to configure your environment variables in the .env file before testing):
 
 ```
   go test -v .\internal\handlers\get_todos_test.go -run TestGetTodos
