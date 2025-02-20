@@ -14,11 +14,14 @@ func main() {
 	database.InitDatabase()
 	s3helper.InitS3()
 
+	// Get the database instance
+	db := database.GetDB()
+
 	// Initialize Gin router
 	r := gin.Default()
 
 	// Register the routes
-	routes.RegisterRoutes(r)
+	routes.RegisterRoutes(r, db)
 
 	// Start the server
 	port := ":8080"

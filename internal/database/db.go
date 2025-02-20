@@ -34,3 +34,11 @@ func InitDatabase() {
     // Migrate the models
     DB.AutoMigrate(&models.Todo{})
 }
+
+func GetDB() *gorm.DB {
+	return DB
+}
+
+func DBMigrate() {
+	DB.AutoMigrate(&models.Todo{})
+}
