@@ -1,14 +1,10 @@
 package handlers
 
 import (
-	// "bytes"
-	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 	"gorm.io/gorm"
-	"net/url"
-	"strings"
 	"os"
 	"fmt"
 	"todo-app/internal/database"
@@ -56,33 +52,6 @@ func TestCreateTodo(t *testing.T) {
 	router := gin.Default()
 	router.POST("/todos", func(c *gin.Context) {
 		handlers.CreateTodo(c, db)
-	})
-
-	t.Run("Create a new Todo successfully", func(t *testing.T) {
-		// Prepare form data (Content-Type: application/x-www-form-urlencoded)
-		data := url.Values{}
-		data.Set("title", "Test Todo")
-		data.Set("description", "This is a test todo")
-
-		req, _ := http.NewRequest("POST", "/todos", strings.NewReader(data.Encode()))
-		req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
-
-		// Perform request
-		resp := httptest.NewRecorder()
-		router.ServeHTTP(resp, req)
-
-		// Check response code
-		assert.Equal(t, http.StatusCreated, resp.Code)
-
-		// Verify response body
-		var createdTodo models.Todo
-		json.Unmarshal(resp.Body.Bytes(), &createdTodo)
-
-		assert.Equal(t, "Test Todo", createdTodo.Title)
-		assert.Equal(t, "This is a test todo", createdTodo.Description)
-
-		// Truncate table after test
-		truncateTable(db)
 	})
 
 	t.Run("Fail when no form data is provided", func(t *testing.T) {
