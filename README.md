@@ -87,20 +87,12 @@ psql -h localhost -U yourusername -d todoapp -p 5432
 
 ### B) On Docker
 
-#### 1. Fork and Clone the Repository
-
-First, clone this repository to your local machine:
-
-```
-git clone https://github.com/yourusername/todoapp.git
-```
-
-#### 2. Docker Image
+#### 1.  Docker Image
 
 You can pull the Docker image from Docker Hub.
 
 ```
-docker pull mohitkambli8/todoapp:latest
+docker pull mohitkambli8/todoapp:updated
 ```
 
 Alternatively, if you are building the image locally:
@@ -130,7 +122,7 @@ AWS_SECRET_ACCESS_KEY=
 If you have already pulled or built the Docker image, you can run the container with the following command:
 
 ```
-docker run -d -p 8080:8080 --env-file .env yourusername/todoapp:latest
+docker run -d -p 8080:8080 --env-file .env mohitkambli8/todoapp:updated
 ```
 
 - This will start the container in detached mode (-d), and expose port 8080 of the container to port 8080 on your host machine.
