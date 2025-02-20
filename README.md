@@ -7,6 +7,11 @@ Prerequisites
 - Docker Hub account (optional for pushing the image)
 - .env file configuration for environment variables
 
+## System Design
+
+![image](https://github.com/user-attachments/assets/4ba80a25-3ed5-4b71-a2d7-54dd6bce48cd)
+
+
 ## Steps to Run the Application
 
 ### A) On Local Machine
