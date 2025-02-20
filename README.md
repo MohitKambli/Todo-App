@@ -9,7 +9,7 @@ Prerequisites
 
 ## System Design
 
-![image](https://github.com/user-attachments/assets/4ba80a25-3ed5-4b71-a2d7-54dd6bce48cd)
+![image](https://github.com/user-attachments/assets/477cc5fb-cedb-4850-a95e-ad39bc4a1a13)
 
 
 ## Steps to Run the Application
