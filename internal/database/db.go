@@ -32,7 +32,9 @@ func InitDatabase() {
     fmt.Println("Connected to PostgreSQL successfully!")
 
     // Migrate the models
-    DB.AutoMigrate(&models.Todo{})
+    if err := DB.AutoMigrate(&models.Todo{}); err != nil {
+        log.Fatal("AutoMigrate error:", err)
+    }
 }
 
 func GetDB() *gorm.DB {
